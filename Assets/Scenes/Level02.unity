@@ -7362,6 +7362,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160222767}
   m_CullTransparentMesh: 0
+--- !u!95 &1269332143 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3013961420284139764, guid: 7e915b610a6e8dd4f8c5cf6c4488167d,
+    type: 3}
+  m_PrefabInstance: {fileID: 341632284924620440}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1284854927
 GameObject:
   m_ObjectHideFlags: 0
@@ -7454,9 +7460,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1352443046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42b32b5e8cd723b42a162faf60db9af5, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e2cbe058d00b774a84ca4cc5177036f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transition: {fileID: 1269332143}
+  transitionTime: 1
 --- !u!61 &1352443048
 BoxCollider2D:
   m_ObjectHideFlags: 0

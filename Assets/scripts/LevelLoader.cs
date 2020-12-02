@@ -11,13 +11,15 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
-    void Update()
-    {
-        if(Input.GetMouseButtonDown(0)){
+    void OnTriggerEnter2D(Collider2D trig){
 
-            LoadNextLevel();
+         if(trig.CompareTag("Player")){
+
+             LoadNextLevel();
+       
         }
     }
+
 
     public void LoadNextLevel(){
 
