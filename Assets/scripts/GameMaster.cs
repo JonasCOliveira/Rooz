@@ -11,12 +11,14 @@ public class GameMaster : MonoBehaviour
 
     public static GameMaster instance;
     public Vector2 lastCheckPointPos;
-    public int numOfHearts = 5;
+    public int numOfHearts = 50;
     public int numOfPoints = 0;
     public int numOfBullets = 10;
 
-    void Awake(){
+    public int scorePoints = 0;
 
+    void Awake(){
+        numOfHearts = 100;
         if(instance == null){
 
                 instance = this;
@@ -36,6 +38,7 @@ public class GameMaster : MonoBehaviour
     void Update(){
 
         AttHud();
+
     }
 
     public void SetNumOfHearts(int hearts){
@@ -62,7 +65,6 @@ public class GameMaster : MonoBehaviour
 
     }
 
-
     public int GetNumOfPoints(){
 
         return numOfPoints;
@@ -71,6 +73,22 @@ public class GameMaster : MonoBehaviour
     public void ResetNumOfPoints(){
 
         numOfPoints = 0;
+    }
+
+    public void SetScore(int score){
+
+        scorePoints = score; 
+        AttHud();
+    }
+
+    public int GetScore(){
+
+        return scorePoints;
+    }
+
+    public void ResetScore(){
+
+        scorePoints = 0;
     }
 
     public void SetNumOfBullets(int bullets){
@@ -93,11 +111,11 @@ public class GameMaster : MonoBehaviour
 
 
     public void AttHud(){
-
+        
         GameObject.Find("HeartPointsText").GetComponent<Text>().text = numOfHearts.ToString();
         GameObject.Find("BulletsText").GetComponent<Text>().text = numOfBullets.ToString();
         GameObject.Find("DiamondsPointsText").GetComponent<Text>().text = numOfPoints.ToString();
-        
+        GameObject.Find("ScoreText").GetComponent<Text>().text = scorePoints.ToString();
     }
 
 

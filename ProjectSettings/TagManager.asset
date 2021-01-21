@@ -4,15 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - turnLeftRight
-  - turnUpDown
-  - enemy
-  - coins
   - Bullet
+  - turnLeftRight
+  - spykes
+  - gem
+  - turnUpDown
   - GM
-  - HeartPoint
-  - CheckPoint
-  - NextLevel
+  - enemy
+  - RespawnTag
+  - EndOfMap
+  - life
   layers:
   - Default
   - TransparentFX
@@ -48,11 +49,11 @@ TagManager:
   - 
   m_SortingLayers:
   - name: Background
-    uniqueID: 4189756515
+    uniqueID: 2648791529
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Foreground
-    uniqueID: 2971189951
+    uniqueID: 524703427
     locked: 0

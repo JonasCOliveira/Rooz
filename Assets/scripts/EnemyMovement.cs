@@ -1,11 +1,11 @@
-﻿using UnityEngine.SceneManagement;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
 
-
+    public Animator anim;
     public float runSpeed = 10f;
     public bool isRight;
 
@@ -39,21 +39,20 @@ public class EnemyMovement : MonoBehaviour
 
         }
 
-        else if(trig.gameObject.CompareTag("Bullet")){
+        if(trig.gameObject.CompareTag("Bullet")){
 
-            Destroy(gameObject);
+            StartCoroutine(DestroyOpossum());
         }
 
-        // else if(trig.gameObject.CompareTag("Player")){
-
-        //         GameMaster.instance.SetNumOfHearts(-1);
-        //         PlayerPos.LoadCheckPoint();
-
-
-
-        // }
     }
 
+    IEnumerator DestroyOpossum(){
+
+        anim.SetBool("isDead", true);
+        yield return new WaitForSeconds(.25f);
+        Destroy(gameObject);
+        
+    }
 
 
 }

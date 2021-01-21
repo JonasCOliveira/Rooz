@@ -1,13 +1,20 @@
-﻿
+﻿using System;
+using System.Security.AccessControl;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 public class Weapon : MonoBehaviour
 {
     public Transform FirePoint;
     public GameObject bulletPrefab;
     public GameMaster gm;
     public int bulletQuantity = 0;
+    public CharacterController2D player;
+    public GameObject bullet;
 
+    public const float DISTANCE_PLAYER_BULLET = 20f;
+    private float distance;
 
     void Start(){
 
@@ -27,17 +34,15 @@ public class Weapon : MonoBehaviour
             GameMaster.instance.SetNumOfBullets(-1);
             GameMaster.instance.AttHud();
         }
+
+        // distance = Vector3.Distance(player.transform.position, GameObject.FindGameObjectWithTag("Bullet").transform.position);
     }
 
     void Shoot(){
 
-        Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
-    }
-
-    void ChargeBullets(){
-
-
-
+        bullet = Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
+        Destroy(bullet,2.0f);
+    
     }
 
 }

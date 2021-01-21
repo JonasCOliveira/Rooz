@@ -16,19 +16,19 @@ public class Checkpoint : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
     }
 
-    void OnTriggerEnter2D(Collider2D other){
+    // void OnTriggerEnter2D(Collider2D other){
 
-        if(other.CompareTag("Player") && isChecked == false){
+    //     if(other.CompareTag("Player") && isChecked == false){
 
-            isChecked = true;
-            numOfPointsCP = GameMaster.instance.GetNumOfPoints();
-            numOfBulletsCP = GameMaster.instance.GetNumOfBullets();
-            numOfHeartsCP = GameMaster.instance.GetNumOfHearts();
-            gm.lastCheckPointPos = transform.position;
+    //         isChecked = true;
+    //         numOfPointsCP = GameMaster.instance.GetNumOfPoints();
+    //         numOfBulletsCP = GameMaster.instance.GetNumOfBullets();
+    //         numOfHeartsCP = GameMaster.instance.GetNumOfHearts();
+    //         gm.lastCheckPointPos = transform.position;
             
-        }
+    //     }
 
-    }
+    // }
 
 
 

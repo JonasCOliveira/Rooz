@@ -19,6 +19,7 @@ public class PlayerPos : MonoBehaviour
         GameMaster.instance.ResetNumOfPoints();
         GameMaster.instance.ResetNumOfBullets();
 
+
         if(Checkpoint.GetNumOfHeartsCP() == 0){
             Debug.Log("Reset");
            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -34,6 +35,8 @@ public class PlayerPos : MonoBehaviour
         GameMaster.instance.AttHud();
 
     }
+
+
 
  
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class Health : MonoBehaviour
 {
 
     public Animator anim;
@@ -35,4 +35,13 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    public void Hurt(){
+
+        anim.SetBool("isHurting", true);
+        
+    
+            GameMaster.instance.SetNumOfHearts(-1);
+            
+            Reset();
+    }
 }
